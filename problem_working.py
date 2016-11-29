@@ -12,7 +12,8 @@ from time import time
 from numpy import union1d, intersect1d
 
 
-REPEAT = 2
+REPEAT = 10
+print('Using {} repetitions for timing'.format(REPEAT))
 
 ### Utilities
 def confirm_solution(a, b):
@@ -206,6 +207,8 @@ def print_results(results, relative_to):
     structure1
     structure2
     """
+    # New line at beginning
+    print()
     # Make print templates, forst methods
     anyresult = results.itervalues().next()
     method_width = max(20, max(len(key) for key in anyresult.keys()) + 3)

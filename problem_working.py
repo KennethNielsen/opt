@@ -9,6 +9,7 @@ from random import shuffle
 from pprint import pprint
 from time import time
 
+import numpy as np
 from numpy import union1d, intersect1d
 
 
@@ -196,6 +197,11 @@ def numpy_simple(list_of_arrays):
 @timeme(REPEAT)
 def numba_one_array(list_of_arrays):
     """Try hand at numba implementation"""
+    # Find largest possible size of sets
+    number_of_elements = np.unique(item for sublist in list_of_arrays
+                                   for item in sublist).size
+    #print(all_unique)
+    
     
     return 'IGNORE'
 
